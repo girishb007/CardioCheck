@@ -140,6 +140,6 @@ dist
 .tern-port
 
 # Server
-lib/
+server/lib/
 .vscode
 .env

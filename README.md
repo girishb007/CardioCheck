@@ -48,7 +48,7 @@ io
 numpy
 pandas
 cv2
-pickle
+pickle-mixin
 urllib
 boto3
 dotenv
