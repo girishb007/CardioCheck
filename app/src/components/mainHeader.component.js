@@ -39,7 +39,9 @@ export default function MainHeader() {
 
     let changeRoute = (elementRoute) => {
         setIsRoute(elementRoute);
-        if (elementRoute == '/') {
+        if (elementRoute === '/caaas/chat-with-us') {
+            window.location.href = 'http://127.0.0.1:5173/c/o2qM5v9h5L3TtDfeJL1fD';
+        } else if (elementRoute === '/') {
             removeProjectCookie('email', { path: '/' });
             removeProjectCookie('level', { path: '/' });
             window.location.href = elementRoute;
@@ -47,6 +49,7 @@ export default function MainHeader() {
             router.push(elementRoute);
         }
     };
+    
 
     let changeOpen = (status) => {
         setIsOpen(status);
@@ -70,6 +73,16 @@ export default function MainHeader() {
                 <img src={main.src} alt="Main" />
             </a>
             <nav className="my-2 my-md-0 mr-md-3">
+            <a
+    className="p-2 text-dark"
+    onClick={(e) => {
+        changeRoute('/caaas/chat-with-us');
+        e.preventDefault();
+    }}
+>
+    Chat with Us
+</a>
+
                 <a
                     className="p-2 text-dark"
                     onClick={(e) => {
