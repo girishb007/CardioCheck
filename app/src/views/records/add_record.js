@@ -370,12 +370,14 @@ function AddRecord() {
                     myCache.mset([
                         { key: 'recordStatus', val: data.data, ttl: 10000 }
                     ]);
+                    setRecordStatus("Image uploaded successfully");
+                    alert("The image has been uploaded successfully!"); // Add this line
                 });
             let recordStatus = myCache.mget(['recordStatus']).recordStatus;
 
             setFiles([]);
             setUploadStatus(false);
-            setShowPopUp(true);
+            setShowPopUp(false);
             setRecordStatus(myCache.mget(['recordStatus']).recordStatus);
             window.scrollTo(0, 0);
             setIsStatus(!isStatus);

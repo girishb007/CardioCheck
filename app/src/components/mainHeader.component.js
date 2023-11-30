@@ -83,15 +83,7 @@ export default function MainHeader() {
     Chat with Us
 </a>
 
-                <a
-                    className="p-2 text-dark"
-                    onClick={(e) => {
-                        changeRoute('/caaas/check-score');
-                        e.preventDefault();
-                    }}
-                >
-                    Check Scores
-                </a>
+                
                 <a
                     className="p-2 text-dark"
                     onClick={(e) => {
@@ -100,6 +92,15 @@ export default function MainHeader() {
                     }}
                 >
                     Add Record
+                </a>
+                <a
+                    className="p-2 text-dark"
+                    onClick={(e) => {
+                        changeRoute('/caaas/check-score');
+                        e.preventDefault();
+                    }}
+                >
+                    Check Scores
                 </a>
                 <span className="dropdown">
                     <a
