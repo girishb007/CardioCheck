@@ -50,21 +50,6 @@ export default function SignUp() {
 
     const level = useSelector((state) => state.MainViewReducer.level ?? '');
 
-    const buttonStyle = {
-        borderRadius: '25px',
-        backgroundColor: 'white', // Button background color
-        color: 'black', // Button text color
-        padding: '10px 20px',
-        fontSize: '1.2rem', // Larger font size for buttons
-        fontWeight: 'bold', // Bold font weight for text
-        margin: '10px 0' // Add some margin for spacing
-    };
-
-    const formTextStyle = {
-        color: 'grey', // Grey text color as in MainView
-        fontStyle: 'italic' // Italicized text style
-    };
-
     useEffect(() => {
         setFirstName('');
         setLastName('');
@@ -260,9 +245,8 @@ export default function SignUp() {
     };
 
     return (
-        <div className="container" style={{ backgroundColor: 'lightblue', padding: '20px', borderRadius: '5px', marginTop: '20px' }}> {/* Light Blue Background */}
-            <form className="form" id="form-id">
-                <h3 style={{ color: 'black' }}>Sign Up</h3> 
+        <form className="form" id="form-id">
+            <h3>Sign Up</h3>
 
             <div
                 className={
@@ -711,28 +695,26 @@ export default function SignUp() {
             </div>
 
             <a
-                    style={buttonStyle}
-                    onClick={async (e) => {
-                        await register();
+                className="btn btn-primary btn-block"
+                onClick={async (e) => {
+                    await register();
+                    e.preventDefault();
+                }}
+                role="button"
+            >
+                Sign Up
+            </a>
+            <p className="forgot-password text-right">
+                Already registered{' '}
+                <a
+                    onClick={(e) => {
+                        changeRoute('/caaas/login');
                         e.preventDefault();
                     }}
-                    role="button"
                 >
-                    Sign Up
+                    sign in?
                 </a>
-                <p className="forgot-password text-right" style={formTextStyle}>
-                    Already registered{' '}
-                    <a
-                        onClick={(e) => {
-                            changeRoute('/caaas/login');
-                            e.preventDefault();
-                        }}
-                    >
-                        sign in?
-                    </a>
-                </p>
-            </form>
-            </div>
-
+            </p>
+        </form>
     );
 }
