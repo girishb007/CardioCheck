@@ -364,7 +364,7 @@ function AddRecord() {
             await fetch('http://localhost:8080/api/record/create/image/', {
                 method: 'POST',
                 body: formData
-            })
+            })  
                 .then((res) => res.json())
                 .then((data) => {
                     myCache.mset([
